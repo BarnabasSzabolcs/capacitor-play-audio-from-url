@@ -1,6 +1,25 @@
 # capacitor-play-audio-from-url
 
-This capacitor plugin plays audio natively from a remote url.
+This capacitor plugin enables playing audio natively from a remote url, 
+on web, android and ios.
+
+## Usage
+
+```typescript
+import { PlayAudioFromUrl } from 'capacitor-play-audio-from-url'
+
+PlayAudioFromUrl
+    .play({ url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' })
+    .then(() => console.log('Audio played'))
+    .catch((error) => console.error('Error playing audio (e.g. failed to load)', error));
+// or
+try {
+    await PlayAudioFromUrl.play({url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'})
+    console.log('Audio played')
+}catch (error) {
+    console.error('Error playing audio (e.g. failed to load)', error)
+}
+```
 
 ## Install
 
@@ -62,23 +81,10 @@ play(options: PlayOptions) => Promise<void>
 </docgen-api>
 
 
-# Useful (but not necessary) commands
-
-```bash
-cd android
-./gradlew clean
-./gradlew build
-./gradlew assembleDebug
-./gradlew assembleRelease
-```
-
-```bash
-cd ios/App
-pod install
-```
+# Development
 
 To test, it is best to link it to a project using
 ```bash
 npm install <path-to-the-project>
 ```
-Then lots of npx cap sync and npx cap copy for good measure.:)
+Then lots of `npx cap sync`, `npx cap copy` and building the apps for good measure.:)
