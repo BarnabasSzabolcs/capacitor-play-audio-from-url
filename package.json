@@ -1,6 +1,6 @@
 {
   "name": "capacitor-play-audio-from-url",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "This capacitor plugin plays audio natively from a remote url.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
