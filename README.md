@@ -14,6 +14,8 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`play(...)`](#play)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -33,5 +35,28 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
+
+
+### play(...)
+
+```typescript
+play(options: PlayOptions) => Promise<void>
+```
+
+| Param         | Type                                                |
+| ------------- | --------------------------------------------------- |
+| **`options`** | <code><a href="#playoptions">PlayOptions</a></code> |
+
+--------------------
+
+
+### Interfaces
+
+
+#### PlayOptions
+
+| Prop      | Type                |
+| --------- | ------------------- |
+| **`url`** | <code>string</code> |
 
 </docgen-api>
