@@ -19,4 +19,9 @@ public class PlayAudioFromUrlPlugin extends Plugin {
         ret.put("value", implementation.echo(value));
         call.resolve(ret);
     }
+
+    @PluginMethod
+    public void play(PluginCall call) {
+        implementation.play(call);
+    }
 }

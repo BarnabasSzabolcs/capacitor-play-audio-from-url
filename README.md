@@ -60,3 +60,25 @@ play(options: PlayOptions) => Promise<void>
 | **`url`** | <code>string</code> |
 
 </docgen-api>
+
+
+# Useful (but not necessary) commands
+
+```bash
+cd android
+./gradlew clean
+./gradlew build
+./gradlew assembleDebug
+./gradlew assembleRelease
+```
+
+```bash
+cd ios/App
+pod install
+```
+
+To test, it is best to link it to a project using
+```bash
+npm install <path-to-the-project>
+```
+Then lots of npx cap sync and npx cap copy for good measure.:)

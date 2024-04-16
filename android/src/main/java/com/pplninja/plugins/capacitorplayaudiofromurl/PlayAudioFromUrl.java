@@ -28,8 +28,9 @@ public class PlayAudioFromUrl extends Plugin {
         }
 
         try {
-            mediaPlayer.setDataSource(this.bridge.getContext(), Uri.parse(url));
-            mediaPlayer.prepareAsync();
+            mediaPlayer.reset(); // Reset the MediaPlayer to its uninitialized state
+            mediaPlayer.setDataSource(url);
+            mediaPlayer.prepareAsync(); // Prepare the MediaPlayer asynchronously
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
                 public void onPrepared(MediaPlayer mp) {
