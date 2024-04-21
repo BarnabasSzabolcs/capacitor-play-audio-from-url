@@ -10,13 +10,6 @@ import AVFoundation
 public class PlayAudioFromUrlPlugin: CAPPlugin {
     private let implementation = PlayAudioFromUrl()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
-    }
-
     @objc func play(_ call: CAPPluginCall) {
         let url = call.getString("url") ?? ""
         print("PlayAudioFromUrlPlugin.swift play: \(url)")

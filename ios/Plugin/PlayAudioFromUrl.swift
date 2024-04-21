@@ -6,11 +6,6 @@ import AVFoundation
     var playerItem: AVPlayerItem?
     var playPromise: ((Result<Bool, Error>) -> Void)?
 
-    @objc public func echo(_ value: String) -> String {
-        print(value)
-        return value
-    }
-
     @objc public func play(_ url: String, completion: @escaping (Bool, Error?) -> Void) {
         print("PlayAudioFromUrl.swift play: \(url)")
         guard let audioUrl = URL(string: url) else {

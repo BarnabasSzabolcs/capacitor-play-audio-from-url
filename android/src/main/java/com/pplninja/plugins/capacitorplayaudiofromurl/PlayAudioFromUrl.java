@@ -13,11 +13,6 @@ import java.io.IOException;
 public class PlayAudioFromUrl extends Plugin {
     private MediaPlayer mediaPlayer = new MediaPlayer();
 
-    public String echo(String value) {
-        Log.i("Echo", value);
-        return value;
-    }
-
     @PluginMethod()
     public void play(PluginCall call) {
         String url = call.getString("url");
