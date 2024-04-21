@@ -46,9 +46,13 @@ npx cap sync
 play(options: PlayOptions) => Promise<void>
 ```
 
-| Param         | Type                                                |
-| ------------- | --------------------------------------------------- |
-| **`options`** | <code><a href="#playoptions">PlayOptions</a></code> |
+Plays an audio file from a given URL.
+The audio file is retrieved from an internal cache if available, otherwise it is fetched and added to the cache.
+If the cache is full, the oldest entry is removed before a new entry is added.
+
+| Param         | Type                                                | Description                                                                                        |
+| ------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **`options`** | <code><a href="#playoptions">PlayOptions</a></code> | - The options for playing the audio. Must include a `url` property with the URL of the audio file. |
 
 --------------------
 
