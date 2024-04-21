@@ -47,8 +47,8 @@ play(options: PlayOptions) => Promise<void>
 ```
 
 Plays an audio file from a given URL.
-The audio file is retrieved from an internal cache if available, otherwise it is fetched and added to the cache.
-If the cache is full, the oldest entry is removed before a new entry is added.
+In web mode, to avoid getting audio play rejected by mobile browsers when playing many audios,
+the audio sources are cached in an LRU cache with 256 entries.
 
 | Param         | Type                                                | Description                                                                                        |
 | ------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
