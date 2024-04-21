@@ -15,21 +15,17 @@ export class PlayAudioFromUrlWeb
 
         const audioFileName = options.url.split('/').pop();
         if (!audioFileName) return;
-        const audio = document.createElement('audio');
+        const audio = new Audio();
+        audio.addEventListener('canplaythrough', () => {
+            audio.play();
+        });
         audio.src = options.url;
-        audio.autoplay = true;
-
-        // Append the audio element to the body of the document
-        document.body.appendChild(audio);
 
         return new Promise((resolve, reject) => {
-            // Remove the audio element from the document when it finishes playing
             audio.onended = () => {
-                document.body.removeChild(audio);
                 resolve();
             }
             audio.onerror = (error) => {
-                document.body.removeChild(audio);
                 reject(error);
             }
         });
