@@ -14,20 +14,8 @@ export class PlayAudioFromUrlWeb
         console.log('play', options);
 
         const audioFileName = options.url.split('/').pop();
-        if (!audioFileName) return;
-        const audio = new Audio();
-        audio.addEventListener('canplaythrough', () => {
-            audio.play();
-        });
-        audio.src = options.url;
-
-        return new Promise((resolve, reject) => {
-            audio.onended = () => {
-                resolve();
-            }
-            audio.onerror = (error) => {
-                reject(error);
-            }
-        });
+        if (!audioFileName) return Promise.reject();
+        const audio = new Audio(options.url);
+        return audio.play();
     }
 }

@@ -1,11 +1,13 @@
 import { registerPlugin } from '@capacitor/core';
 
 import type { PlayAudioFromUrlPlugin } from './definitions';
+import { PlayAudioFromUrlWeb } from './web';
 
 const PlayAudioFromUrl = registerPlugin<PlayAudioFromUrlPlugin>(
   'PlayAudioFromUrl',
   {
-    web: () => import('./web').then(m => new m.PlayAudioFromUrlWeb()),
+    // Cannot use dynamic import here because the mobile browsers disallow then playing the audio.
+    web: () => new PlayAudioFromUrlWeb(),
   },
 );
 
